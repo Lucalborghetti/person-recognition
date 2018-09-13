@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="567.0" prefWidth="1036.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
+	<center>
+		<VBox alignment="CENTER" maxWidth="-Infinity" prefWidth="315.0" BorderPane.alignment="CENTER">
+			<children>
+            <HBox alignment="CENTER">
+               <children>
+      				<Label text="Current frame (">
+      					<font>
+      						<Font name="System Bold" size="12.0" />
+      					</font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+      				</Label>
+                  <Label fx:id="currentFrameTime" text="0000/00/00 00:00:00">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label text=")">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
+               </children>
+            </HBox>
+				<ImageView fx:id="currentFrame" fitHeight="255.0" fitWidth="250.0" onMouseClicked="#getMousePosition" pickOnBounds="true" preserveRatio="true">
+					<image>
+						<Image url="@../img/default.png" />
+					</image>
+					<VBox.margin>
+						<Insets bottom="10.0" top="10.0" />
+					</VBox.margin>
+				</ImageView>
+            <CheckBox fx:id="autorefreshCheckBox" mnemonicParsing="false" selected="true" text="Auto refresh">
+               <VBox.margin>
+                  <Insets bottom="10.0" top="5.0" />
+               </VBox.margin>
+            </CheckBox>
+				<HBox alignment="CENTER">
+					<children>
+						<Button fx:id="backwardButton" mnemonicParsing="false" onAction="#backward" prefWidth="75.0" text="Previous">
+							<HBox.margin>
+								<Insets right="5.0" />
+							</HBox.margin>
+							<cursor>
+								<Cursor fx:constant="HAND" />
+							</cursor>
+						</Button>
+						<Button fx:id="forwardButton" mnemonicParsing="false" onAction="#forward" prefWidth="75.0" text="Next">
+							<HBox.margin>
+								<Insets left="5.0" />
+							</HBox.margin>
+							<cursor>
+								<Cursor fx:constant="HAND" />
+							</cursor>
+						</Button>
+					</children>
+				</HBox>
+			</children>
+			<BorderPane.margin>
+				<Insets />
+			</BorderPane.margin>
+		</VBox>
+	</center>
+	<left>
+		<VBox alignment="CENTER" maxWidth="-Infinity" prefWidth="315.0" BorderPane.alignment="CENTER">
+			<children>
+				<Label text="Webcam stream">
+					<font>
+						<Font name="System Bold" size="12.0" />
+					</font>
+				</Label>
+				<ImageView fx:id="webcamStream" fitHeight="246.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true">
+					<image>
+						<Image url="@../img/default.png" />
+					</image>
+               <VBox.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </VBox.margin>
+				</ImageView>
+            <Label fx:id="timeLabel" text="0000/00/00 00:00:00">
+               <VBox.margin>
+                  <Insets bottom="10.0" top="5.0" />
+               </VBox.margin>
+            </Label>
+				<HBox alignment="CENTER">
+					<children>
+						<Button fx:id="pauseButton" mnemonicParsing="false" onAction="#pause" prefWidth="75.0" text="Pause">
+							<HBox.margin>
+								<Insets right="5.0" />
+							</HBox.margin>
+							<cursor>
+								<Cursor fx:constant="HAND" />
+							</cursor>
+						</Button>
+						<Button fx:id="playButton" mnemonicParsing="false" onAction="#play" prefWidth="75.0" text="Play">
+							<HBox.margin>
+								<Insets left="5.0" />
+							</HBox.margin>
+							<cursor>
+								<Cursor fx:constant="HAND" />
+							</cursor>
+						</Button>
+					</children>
+				</HBox>
+			</children>
+			<BorderPane.margin>
+				<Insets />
+			</BorderPane.margin>
+		</VBox>
+	</left>
+	<right>
+		<VBox alignment="CENTER" maxWidth="-Infinity" prefWidth="315.0" BorderPane.alignment="CENTER">
+			<children>
+				<Label text="Current frame informations">
+					<font>
+						<Font name="System Bold" size="12.0" />
+					</font>
+				</Label>
+				<GridPane prefHeight="233.0" prefWidth="305.0">
+					<columnConstraints>
+						<ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="144.0" minWidth="10.0" prefWidth="91.0" />
+						<ColumnConstraints hgrow="SOMETIMES" maxWidth="209.0" minWidth="10.0" prefWidth="209.0" />
+					</columnConstraints>
+					<rowConstraints>
+						<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+						<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+						<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+						<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+						<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+						<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+						<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+					</rowConstraints>
+					<children>
+						<Label text="Name :" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets right="10.0" />
+                     </GridPane.margin></Label>
+						<Label text="Informations :" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets right="10.0" />
+                     </GridPane.margin></Label>
+						<Label text="Age :" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets right="10.0" />
+                     </GridPane.margin></Label>
+						<Label text="Gender :" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets right="10.0" />
+                     </GridPane.margin></Label>
+						<Label text="Smile :" GridPane.rowIndex="5">
+                     <GridPane.margin>
+                        <Insets right="10.0" />
+                     </GridPane.margin></Label>
+						<Label text="Glasses :" GridPane.rowIndex="6">
+                     <GridPane.margin>
+                        <Insets right="10.0" />
+                     </GridPane.margin></Label>
+						<Label fx:id="nameLabel" text="-" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+						<Label fx:id="informationsLabel" text="-" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+						<Label fx:id="ageLabel" text="-" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+						<Label fx:id="genderLabel" text="-" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+						<Label fx:id="smileLabel" text="-" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+						<Label fx:id="glassesLabel" text="-" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+						<HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnSpan="2">
+							<children>
+								<Label text="Number of faces detected : " />
+								<Label fx:id="nbFacesLabel" text="0" />
+							</children>
+						</HBox>
+					</children>
+					<VBox.margin>
+						<Insets bottom="10.0" top="10.0" />
+					</VBox.margin>
+				</GridPane>
+				<HBox alignment="CENTER">
+					<children>
+						<Button fx:id="addFaceButton" mnemonicParsing="false" onAction="#addFace" prefWidth="75.0" text="Add face">
+							<HBox.margin>
+								<Insets />
+							</HBox.margin>
+							<cursor>
+								<Cursor fx:constant="HAND" />
+							</cursor>
+						</Button>
+						<Button fx:id="detectButton" mnemonicParsing="false" onAction="#detect" prefWidth="75.0" text="Detect">
+							<HBox.margin>
+								<Insets left="5.0" right="5.0" />
+							</HBox.margin>
+							<cursor>
+								<Cursor fx:constant="HAND" />
+							</cursor>
+						</Button>
+						<Button fx:id="identifyButton" mnemonicParsing="false" onAction="#identify" prefWidth="75.0" text="Identify">
+							<HBox.margin>
+								<Insets right="5.0" />
+							</HBox.margin>
+							<cursor>
+								<Cursor fx:constant="HAND" />
+							</cursor>
+						</Button>
+						<Button fx:id="browseButton" mnemonicParsing="false" onAction="#browse" prefWidth="75.0" text="Browse">
+							<cursor>
+								<Cursor fx:constant="HAND" />
+							</cursor>
+						</Button>
+					</children>
+				</HBox>
+			</children>
+			<BorderPane.margin>
+				<Insets />
+			</BorderPane.margin>
+		</VBox>
+	</right>
+	<bottom>
+		<AnchorPane id="AnchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+			  <ScrollPane pannable="false" prefHeight="250.0" prefWidth="1016.0">
+    <VBox fx:id="detectedFacesBox" prefWidth="1010.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <cursor>
+               <Cursor fx:constant="DEFAULT" />
+            </cursor>
+			</ScrollPane>
+         <BorderPane.margin>
+            <Insets top="20.0" />
+         </BorderPane.margin>
+		</AnchorPane>
+	</bottom>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</BorderPane>
